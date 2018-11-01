@@ -1,10 +1,10 @@
 # epgModelPlugin
 TV端页面，弹出订购广告选择购买订购包，插件
-# 1.主要功能点及环境
+## 1.主要功能点及环境
 1.运行环境TV端安卓智能盒子
 
 2.监听key键,切出弹窗,左右、ok键选择订购包，跳转订购页面完成支付
-## 使用
+### 使用
 ```javascript
 var ModelPlugin = new ModelPlugin();
 ModelPlugin.initHandle() //监听返回键值，弹出领券页面
@@ -14,8 +14,8 @@ ModelPlugin.modeHandle()//关闭弹窗
 ```
 备注：目前针对线上项目,考虑到原有项目的完整性,目前只单独抽离了业务层,后期继续优化
 
-# 2.几种常见插件封装方式
-## 根据AMD规范写插件
+## 2.几种常见插件封装方式
+### 根据AMD规范写插件
 ```javascript
 ;(function () {
     'use strict';
@@ -49,7 +49,7 @@ ModelPlugin.modeHandle()//关闭弹窗
     }
 }());
 ```
-## 根据CMD规范写插件
+### 根据CMD规范写插件
 ```
 ;(function(factory) {
     // CMD/SeaJS
@@ -83,7 +83,7 @@ ModelPlugin.modeHandle()//关闭弹窗
     }
 }));
 ```
-## jQuery插件模板
+### jQuery插件模板
 ```
 ;(function ($, window, document, undefined) {
     $.fn.plugin = function(parameter) {
@@ -98,7 +98,7 @@ ModelPlugin.modeHandle()//关闭弹窗
     };
 })(jQuery, window, document);
 ```
-## UMD中使用jQuery 插件
+### UMD中使用jQuery 插件
 ```
 // Uses CommonJS, AMD or browser globals to create a jQuery plugin.
 (function (factory) {
