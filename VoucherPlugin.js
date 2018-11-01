@@ -1,32 +1,39 @@
-function S_FAll(e) {
-    return document.querySelectorAll(e)
+function S_FAll(id) {
+    if (id == '' || id == null) {
+        return false;
+    } else {
+        return document.querySelectorAll(id)
+    }
 }
 
 function S_F(e) {
-    return document.querySelector(e)
+    if (id == '' || id == null) {
+        return false;
+    } else {
+        return document.querySelector(id)
+    }
 }
 
-function transformers(res) {
+function transformers(element1, element2) {
     var e = document.createEvent("MouseEvents");
     e.initEvent("click", true, true);
-    if (S_FAll(res)) {
-        var len = S_FAll(res).length
-        setInterval(function () {
+    if (S_FAll(element1)) {
+        var len = S_FAll(element1).length
+        setInterval(function () { //循环监听5个抢券
             for (var i = len - 1; i >= 1; i--) {
                 (function (i) {
-                    console.info(i, S_FAll(res)[i])
-                    if (S_FAll(res)[i]) {
-                        S_FAll(res)[i].dispatchEvent(e);
+                    if (S_FAll(element1)[i]) {
+                        S_FAll(element1)[i].dispatchEvent(e);
                     }
                 })(i);
             }
         }, 100);
     }
-    setInterval(function () {
-        if (S_F('.btn2')) {
-            S_F('.btn2').dispatchEvent(e);
+    setInterval(function () { //定时监听确认弹窗
+        if (S_F(element2)) {
+            S_F(element2).dispatchEvent(e);
         }
     }, 100);
 
 }
-transformers('.get-btn')
+transformers('.get-btn', '.btn2')
