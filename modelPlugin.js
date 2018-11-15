@@ -1,5 +1,4 @@
-;
-(function (window, document) {
+;(function (window, document) {
     var _global;
     //计算函数
     function _bs_filter(e) {
